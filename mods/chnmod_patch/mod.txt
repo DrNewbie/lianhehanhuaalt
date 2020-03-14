@@ -1,0 +1,24 @@
+{
+	"name" : "ChnMod (Patch)",
+	"author" : "Dr_Newbie",
+	"description" : "百度收获日2吧联合汉化",
+	"version" : "42",
+	"image" : "pd2.png",
+	"blt_version" : 2,
+	"color" : "0 255 255",
+	"updates" :
+	[
+		{
+			"identifier" : 9999999999
+		}
+	],
+	"hooks" :
+	[
+		{ "hook_id" : "lib/managers/menumanager", "script_path" : "lua/Menu_Function.lua" },
+		{ "hook_id" : "lib/managers/localizationmanager", "script_path" : "lua/Update_Tool.lua" },
+		{ "hook_id" : "lib/managers/localizationmanager", "script_path" : "lua/CHNLocalizationManager.lua" },
+		{ "hook_id" : "lib/units/props/timergui", "script_path" : "lua/TimerGui.lua" },
+		{ "hook_id" : "lib/utils/LevelLoadingScreenGuiScript", "script_path" : "lua/LevelLoadingScreenGuiScript.lua" },
+		{ "hook_id" : "lib/utils/lightloadingscreenguiscript", "script_path" : "lua/lightloadingscreenguiscript.lua" }
+	]
+}
