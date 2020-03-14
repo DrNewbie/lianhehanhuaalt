@@ -1,0 +1,9 @@
+{
+	"name" : "WJheist",
+	"author" : "awcjack&leilmyxwz",
+	"version" : "1",
+	"hooks" :
+	[
+		{ "hook_id" : "core/lib/utils/dev/editor/coreworlddefinition", "script_path" : "lua/CoreWorldDefinition.lua" }
+	]
+}
