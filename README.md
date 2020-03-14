@@ -1,1 +1,1 @@
-![ScreenShot](必须看！不看不让问！安装教程！.png)
+![ScreenShot](zip/必须看！不看不让问！安装教程！.png)
