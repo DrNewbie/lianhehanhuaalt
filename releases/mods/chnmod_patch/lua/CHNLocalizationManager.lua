@@ -102,33 +102,12 @@ Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit_CHNMOD", f
 end
 )
 
-function LocalizationManager.text(self, str, macros)
-	local detectmode = false
-	if CHNMOD_PATCH and CHNMOD_PATCH.settings and CHNMOD_PATCH.settings.detectmode == 1 then
-		detectmode = true
-	end
-	local _patch_str = Idstring(str):key()
+local __old_text = LocalizationManager.text
+
+function LocalizationManager:text(str, ...)
+	local _patch_str = Idstring(tostring(str)):key()
 	if self._custom_localizations[_patch_str] then
 		str = _patch_str
 	end
-	if self._custom_localizations[str] then
-		local return_str = self._custom_localizations[str]
-		--[[
-		if macros and type(macros) == "table" then
-			for k, v in pairs( macros ) do
-				return_str = return_str:gsub( "$" .. k .. ";", "$" .. k .. ";")
-			end
-		end
-		]]
-		self._macro_context = macros
-		return_str = self:_localizer_post_process(return_str)
-		self._macro_context = nil
-		return return_str
-	else
-		if detectmode then
-		    log("[".. str .."][".. _patch_str .."]" .. self.orig.text(self, str, macros))
-			return "[".. str .."][".. _patch_str .."]" .. self.orig.text(self, str, macros)
-		end
-	end
-	return self.orig.text(self, str, macros)
+	return __old_text(self, str, ...)
 end

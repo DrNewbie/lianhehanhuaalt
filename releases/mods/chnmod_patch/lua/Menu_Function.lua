@@ -153,6 +153,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "CHNMOD_PATCHOptions", function( men
 		CHNMOD_PATCH:Save()
 	end
 	_bool = CHNMOD_PATCH.settings.noupdate == 1 and true or false
+	--[[
 	MenuHelper:AddToggle({
 		id = "CHNMOD_PATCH_menu_noupdate_callback",
 		title = "CHNMOD_PATCH_menu_noupdate_title",
@@ -161,6 +162,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "CHNMOD_PATCHOptions", function( men
 		value = _bool,
 		menu_id = CHNMOD_PATCH.options_menu,
 	})
+	]]
 	--debugmode
 	MenuCallbackHandler.CHNMOD_PATCH_menu_debugmode_callback = function(self, item)
 		if tostring(item:value()) == "on" then
@@ -209,6 +211,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "CHNMOD_PATCHOptions", function( men
 		CHNMOD_PATCH:Save()
 	end
 	_bool = CHNMOD_PATCH.settings.detectmode == 1 and true or false
+	--[[
 	MenuHelper:AddToggle({
 		id = "CHNMOD_PATCH_menu_detectmode_callback",
 		title = "CHNMOD_PATCH_menu_detectmode_title",
@@ -217,6 +220,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "CHNMOD_PATCHOptions", function( men
 		value = _bool,
 		menu_id = CHNMOD_PATCH.options_menu,
 	})
+	]]
 end)
 
 Hooks:Add("MenuManagerBuildCustomMenus", "CHNMOD_PATCHOptions", function(menu_manager, nodes)

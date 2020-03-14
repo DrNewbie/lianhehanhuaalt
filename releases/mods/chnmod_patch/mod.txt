@@ -2,7 +2,7 @@
   "name": "ChnMod (Patch)",
   "author": "Dr_Newbie",
   "description": "百度收获日2吧联合汉化 https://tieba.baidu.com/p/6525423800",
-  "version": "dr.1",
+  "version": "dr.2",
   "image": "pd2.png",
   "blt_version": 2,
   "color": "0 255 255",
